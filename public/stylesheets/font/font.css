@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'BPdotsUnicaseLight';
+    src: url('BPdotsUnicaseLight-webfont.eot');
+    src: url('BPdotsUnicaseLight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('BPdotsUnicaseLight-webfont.woff') format('woff'),
+         url('BPdotsUnicaseLight-webfont.ttf') format('truetype'),
+         url('BPdotsUnicaseLight-webfont.svg#BPdotsUnicaseLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

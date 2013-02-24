@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>DropDot - Simple file uploading and sharing</title>
+  
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  -->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="stylesheets/foundation.min.css">
+  <link rel="stylesheet" href="stylesheets/font/font.css">
+  <link rel="stylesheet/less" href="stylesheets/app.less">
+
+  <script>
+    var action = "https://dropdot.alfg.co.s3.amazonaws.com/";
+    var bucket_dir = "uploads/";
+    var key = "{{ file_key }}";
+    var aws_key = "{{ aws_key }}";
+    var acl = "public-read";
+    var redirect = "{{ redirect_host }}";
+    var policy = "{{ policy }}";
+    var signature = "{{ signature }}";
+  </script>
+
+</head>
+<body>
+
+  <div id="drop" class="panel">
+    <div id="title">
+      <h2 class="title">DropDot</h2>
+    </div>
+
+    <h4>Drop a file here to upload and share</h4>
+    <p><em>Any file. 5MB Maximum. No fishy business.</em> ;)</p>
+
+    <form action="https://dropdot.alfg.co.s3.amazonaws.com/" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="key" value="uploads/{{ file_key }}">
+      <input type="hidden" name="AWSAccessKeyId" value="{{ aws_key }}"> 
+      <input type="hidden" name="acl" value="public-read"> 
+      <input type="hidden" name="policy" value="{{ policy }}">
+      <input type="hidden" name="signature" value="{{ signature }}">
+      <input type="hidden" name="success_action_status" value="201">
+
+      <input name="file" type="file">
+      <br />
+      <input type="submit" value="Upload File" />
+    </form>
+  </div>
+
+  <footer class="row">
+      <ul class="inline-list">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Code</a></li>
+          <li><a href="#">Tech</a></li>
+          <li><a href="#">Terms</a></li>
+      </ul>
+  </footer>
+  
+  <!-- Included JS Files (Compressed) -->
+  <script src="javascripts/jquery.js"></script>
+  <script src="javascripts/foundation.min.js"></script>
+  <script src="javascripts/jquery.lettering.js"></script>
+  <script src="javascripts/less-1.3.3.min.js"></script>
+  <script src="javascripts/jquery.filedrop.js"></script>
+  
+  <!-- Initialize JS Plugins -->
+  <script src="javascripts/app.js"></script>
+  <script>
+      $(document).ready(function() {
+        $(".title").lettering();
+      });
+  </script> 
+
+</body>
+</html>

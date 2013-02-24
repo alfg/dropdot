@@ -1,0 +1,15 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "3.0.6",
+    "hjs": "*",
+    "less-middleware": "*",
+    "node-uuid": "*",
+    "node-crypto": "*"
+  }
+}
