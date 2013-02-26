@@ -4,12 +4,14 @@
  */
 
 var crypto = require('crypto'),
+    mime = require('mime'),
     uuid = require('node-uuid'),
     config = require('../config');
 
 exports.index = function(req, res){
 
-  res.render('index', { aws_key: config.aws_key,
+  res.render('index', { aws_bucket: config.aws_bucket,
+                        aws_key: config.aws_key,
                         redirect_host: config.redirect_host,
                         host: config.host,
                         bucket_dir: config.bucket_dir });
@@ -21,6 +23,7 @@ exports.share = function(req, res){
 }
 
 exports.signed_urls = function(req, res){
+  var mime_type = mime.lookup(req.query.doc.title);
   var policy = JSON.stringify({
                 "expiration": config.expire_date,
                   "conditions": [ 
@@ -28,6 +31,7 @@ exports.signed_urls = function(req, res){
                     ["starts-with", "$key", config.bucket_dir],
                     {"acl": "public-read"},
                     {"success_action_status": "201"},
+                    ["starts-with", "$Content-Type", mime_type]
                   ]
                 });
 
@@ -39,6 +43,7 @@ exports.signed_urls = function(req, res){
     res.json({ policy: base64policy,
                signature: signature,
                key: config.bucket_dir + file_key + "/" + req.query.doc.title,
-               success_action_redirect: "/"
+               success_action_redirect: "/",
+               contentType: mime_type
             })
 }

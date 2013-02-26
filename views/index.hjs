@@ -18,10 +18,9 @@
   <!-- Included CSS Files (Compressed) -->
   <link rel="stylesheet" href="stylesheets/foundation.min.css">
   <link rel="stylesheet" href="stylesheets/font/font.css">
-  <link rel="stylesheet/less" href="stylesheets/app.less">
+  <link rel="stylesheet" href="stylesheets/app.css">
 
   <script>
-    var action = "https://dropdot.alfg.co.s3.amazonaws.com/";
     var bucket_dir = "uploads/";
     var key = "{{ file_key }}";
     var aws_key = "{{ aws_key }}";
@@ -42,13 +41,14 @@
     <h4>Drop a file here to upload and share</h4>
     <p><em>Any file. 5MB Maximum. No fishy business.</em> ;)</p>
 
-    <form action="http://dropdot.alfg.co.s3.amazonaws.com" method="post" enctype="multipart/form-data" class="direct-upload">
+    <form action="http://{{ aws_bucket }}.s3.amazonaws.com" method="post" enctype="multipart/form-data" class="direct-upload">
       <input type="hidden" name="key">
       <input type="hidden" name="AWSAccessKeyId" value="{{ aws_key }}"> 
       <input type="hidden" name="acl" value="public-read"> 
       <input type="hidden" name="policy">
       <input type="hidden" name="signature">
       <input type="hidden" name="success_action_status" value="201">
+      <input type="hidden" name="Content-Type">
 
       <input name="file" type="file">
     </form>
@@ -72,10 +72,8 @@
   <script src="javascripts/jquery.fileupload.js"></script>
 
   <script src="javascripts/drop.js"></script>
-  <!--
-  <script src="javascripts/jquery.filedrop.js"></script>
   <script src="javascripts/app.js"></script>
-  -->
+
   <script>
       $(document).ready(function() {
         $(".title").lettering();

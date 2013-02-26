@@ -22,6 +22,7 @@ $(function() {
             form.find('input[name=key]').val(data.key)
             form.find('input[name=policy]').val(data.policy)
             form.find('input[name=signature]').val(data.signature)
+            form.find('input[name=Content-Type]').val(data.contentType)
           }
         })
         data.submit();
