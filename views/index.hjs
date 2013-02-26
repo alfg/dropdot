@@ -34,6 +34,7 @@
 <body>
 
   <div id="drop" class="panel">
+    <div id="circle"></div>
     <div id="title">
       <h2 class="title">DropDot</h2>
     </div>
@@ -52,6 +53,7 @@
 
       <input name="file" type="file">
     </form>
+    <div class="progress round eight"><span class="meter"></span></div>
     <input class="share-url" type="text" />
   </div>
 

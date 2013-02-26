@@ -1,19 +1,15 @@
+
+/*
+ * Base */
 body {
     background: url('../images/bg.png') repeat;
     margin-top: 40px;
+    overflow: hidden;
 }
 
+/*
+ * Mixins */
 .blue-gradient() {
-    background: #1e5799;
-    background: -moz-linear-gradient(top,  #1e5799 0%, #7db9e8 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(100%,#7db9e8));
-    background: -webkit-linear-gradient(top,  #1e5799 0%,#7db9e8 100%);
-    background: -o-linear-gradient(top,  #1e5799 0%,#7db9e8 100%);
-    background: -ms-linear-gradient(top,  #1e5799 0%,#7db9e8 100%);
-    background: linear-gradient(to bottom,  #1e5799 0%,#7db9e8 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 );
-}
-.black-gradient() {
     background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, #4798FF 0%, #00395F 100%, blue 5%);
     background-image: -webkit-radial-gradient(45px 45px, circle cover, #4798FF, #00395F);
     background-image: radial-gradient(45px 45px 45deg, circle cover, #4798FF 0%, #00395F 100%, blue 5%);
@@ -31,6 +27,9 @@ body {
     width: 450px;
     height: 450px; 
 }
+
+/*
+ * Helpers */
 .row {
     width: 600px !important;
     min-width: 400px !important;
@@ -39,16 +38,57 @@ body {
     background: #4798FF !important;
     border: none !important;
 }
+.progress {
+    margin: 0 auto;
+    display: none;
+}
+.meter {
+    width: 0;
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-ms-keyframes spin {
+    from { -ms-transform: rotate(0deg); }
+    to { -ms-transform: rotate(360deg); }
+}
+.animate {
+    /* webkit chrome, safari, mobile */
+    -webkit-animation-name: spin; 
+    -webkit-animation-duration: 3s; /* 3 seconds */
+    -webkit-animation-iteration-count: infinite; 
+    -webkit-animation-timing-function: linear;
+
+    /* mozilla ff */
+    -moz-animation-name: spin; 
+    -moz-animation-duration: 3s; /* 3 seconds */
+    -moz-animation-iteration-count: infinite; 
+    -moz-animation-timing-function: linear;
+
+    /* microsoft ie */
+    -ms-animation-name: spin; 
+    -ms-animation-duration: 3s; /* 3 seconds */
+    -ms-animation-iteration-count: infinite; 
+    -ms-animation-timing-function: linear;
+}
+
+/*
+ * Content */
 #title {
+    left: -240px;
+    top: -175px;
+    position: relative;
+    z-index: -10;
     -webkit-transform: rotate(-76deg);
     -moz-transform: rotate(-76deg);
     -o-transform: rotate(-76deg);
     -ms-transform: rotate(-76deg);
     transform: rotate(-76deg);
-    left: -240px;
-    top: -185px;
-    position: relative;
-    z-index: -10;
 }
 #title h2 {
     font-size: 55px;
@@ -61,9 +101,6 @@ body {
   width: 20px;
   left: 0;
   top: 0;
-}
-#share #title {
-    top: -155px !important;
 }
 .char1 { 
     -webkit-transform: rotate(6deg);
@@ -114,17 +151,21 @@ body {
     -ms-transform: rotate(42deg);
     transform: rotate(42deg);
 }
-.bubble { width: 460px !important; }
+.bubble { 
+    width: 460px !important;
+    height: 460px !important;
+}
 
 #drop {
     min-height: 140px;
     text-align: center;
     color: white;
-    padding-top: 160px;
+    padding-top: 150px;
     margin: 0 auto;
-
-    .black-gradient;
+    background: transparent;
+    border: 0;
     .circle;
+
   h4 {
       color: white;
       font-family: Consolas, monaco, monospace;
@@ -138,22 +179,17 @@ body {
       margin: 0 auto;
   }
 }
-#share {
-    min-height: 140px;
-    text-align: center;
-    color: white;
-    padding-top: 130px;
+#circle {
+    border: 1px solid #004F7C;
+    border-radius: 50%;
+    width: 450px;
+    height: 450px;
+    position: absolute;
+    top: 0;
     margin: 0 auto;
-
-    .black-gradient;
-    .circle;
-  h1, h5 {
-      color: white;
-  }
-  .share-url {
-      width: 80% !important;
-      margin: 0 auto;
-  }
+    z-index: -1;
+    margin-left: -20px;
+    .blue-gradient;
 }
 
 footer {

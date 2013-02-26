@@ -33,11 +33,13 @@ $(function() {
       progress: function(e, data){
         // This is what makes everything really cool, thanks to that callback
         // you can now update the progress bar based on the upload progress
+        $('#circle').addClass('animate');
         var percent = Math.round((e.loaded / e.total) * 100)
-        $('.bar').css('width', percent + '%')
+        $('.meter').css('width', percent + '%')
       },
       fail: function(e, data) {
         console.log('fail')
+        $('#circle').removeClass('animate');
       },
       success: function(data) {
 
@@ -51,6 +53,7 @@ $(function() {
         $('.progress').fadeOut(300, function() {
           $('.bar').css('width', 0)
         })
+        $('#circle').removeClass('animate');
       },
     })
   })
