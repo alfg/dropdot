@@ -39,10 +39,12 @@ $(function() {
         console.log('fail')
       },
       success: function(data) {
+
         // Here we get the file url on s3 in an xml doc
         var url = $(data).find('Location').text()
-
-        $('#real_file_url').val(url) // Update the real input in the other form
+        //document.location.href = '/share/#' + data.key;
+        $('.share-url').show();
+        $('.share-url').val(url) // Update the real input in the other form
       },
       done: function (event, data) {
         $('.progress').fadeOut(300, function() {

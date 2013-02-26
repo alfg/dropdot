@@ -52,6 +52,7 @@
 
       <input name="file" type="file">
     </form>
+    <input class="share-url" type="text" />
   </div>
 
   <footer class="row">
