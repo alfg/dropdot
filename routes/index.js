@@ -38,7 +38,7 @@ exports.signed_urls = function(req, res){
 
     res.json({ policy: base64policy,
                signature: signature,
-               key: config.bucket_dir + file_key,
+               key: config.bucket_dir + file_key + "/" + req.query.doc.title,
                success_action_redirect: "/"
             })
 }
