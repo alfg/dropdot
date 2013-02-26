@@ -7,6 +7,9 @@ body {
 }
 /*
  * Mixins */
+.gloss {
+  background: rgba(0, 0, 0, 0.19) !important;
+}
 /*
  * Helpers */
 .row {
@@ -156,6 +159,9 @@ body {
   margin: 0 auto;
   background: transparent;
   border: 0;
+  -webkit-transition: background-color 0.2s linear;
+  -moz-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
   border-radius: 50%;
   width: 450px;
   height: 450px;
@@ -181,10 +187,15 @@ body {
   margin: 0 auto;
   z-index: -1;
   margin-left: -20px;
+  background-color: #4798FF;
   background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, #4798ff 0%, #00395f 100%, #0000ff 5%);
   background-image: -webkit-radial-gradient(45px 45px, circle cover, #4798ff, #00395f);
   background-image: radial-gradient(45px 45px 45deg, circle cover, #4798ff 0%, #00395f 100%, #0000ff 5%);
   border: 1px solid #004F7C;
+  -webkit-box-shadow: 0px 0px 5px 0px #000000;
+  -moz-box-shadow: 0px 0px 5px 0px #000000;
+  -o-box-shadow: 0px 0px 5px 0px #000000;
+  box-shadow: 0px 0px 5px 0px #000000;
 }
 footer {
   margin-top: 40px !important;
