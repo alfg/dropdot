@@ -4,30 +4,20 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-  <!-- Set the viewport width to device width for mobile -->
   <meta name="viewport" content="width=device-width" />
 
   <title>DropDot - Simple file uploading and sharing</title>
   
-  <!-- Included CSS Files (Uncompressed) -->
-  <!--
-  <link rel="stylesheet" href="stylesheets/foundation.css">
-  -->
-  
-  <!-- Included CSS Files (Compressed) -->
   <link rel="stylesheet" href="stylesheets/foundation.min.css">
   <link rel="stylesheet" href="stylesheets/font/font.css">
   <link rel="stylesheet" href="stylesheets/app.css">
+  <link rel="shortcut icon" href="images/circle.png">
 
   <script>
     var bucket_dir = "uploads/";
-    var key = "{{ file_key }}";
     var aws_key = "{{ aws_key }}";
     var acl = "public-read";
     var redirect = "{{ redirect_host }}";
-    var policy = "{{ policy }}";
-    var signature = "{{ signature }}";
   </script>
 
 </head>
@@ -39,8 +29,9 @@
       <h2 class="title">DropDot</h2>
     </div>
 
-    <h4>Drop a file here to upload and share</h4>
-    <p><em>Any file. 5MB Maximum. No fishy business.</em> ;)</p>
+    <h4>Drop a file here and share</h4>
+    <p><em>Any file. 5MB Maximum. No fishy business.</em> ;) <br />
+    <em>All files expire in 24 hours from the uploaded time.</em></p>
 
     <form action="http://{{ aws_bucket }}.s3.amazonaws.com" method="post" enctype="multipart/form-data" class="direct-upload">
       <input type="hidden" name="key">
@@ -59,17 +50,44 @@
 
   <footer class="row">
       <ul class="inline-list">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Code</a></li>
-          <li><a href="#">Tech</a></li>
-          <li><a href="#">Terms</a></li>
+          <li><a class="footer-link" href="#about">About</a></li>
+          <li><a href="http://github.com/alfg/dropdot">Code</a></li>
+          <li><a class="footer-link" href="#terms">Terms</a></li>
       </ul>
   </footer>
+
+  <div id="about" class="footer-text row" style="display: none;">
+      <p><strong>Dropdot</strong> is a simple file sharing application created by <a href="http://alfg.co">Alf</a>
+        to experiment on <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a> uploading 
+        to <a href="http://en.wikipedia.org/wiki/Amazon_S3">Amazon S3 Storage</a>.</p>
+
+      <p>Dropdot is built on <a href="http://nodejs.org/">NodeJS</a>, <a href="http://aws.amazon.com/s3/">Amazon S3</a>,
+        <a href="http://foundation.zurb.com/">Foundation</a>, <a href="https://github.com/blueimp/jQuery-File-Upload">
+        jQuery File Upload</a> and utilizes some nifty <a href="https://developer.mozilla.org/en-US/docs/HTML/HTML5">
+        HTML5</a> and <a href="https://developer.mozilla.org/en-US/docs/CSS/CSS3">CSS3</a> features! (if you noticed :P )</p>
+
+      <p>Dropdot is released under the <a href="http://opensource.org/licenses/MIT">MIT license</a> and is hosted on 
+        <a href="http://github.com/alfg/dropdot">Github</a>. Feel free to clone, fork and roll your own!</p>
+  </div>
+
+  <div id="terms" class="footer-text row" style="display: none;">
+    <pre>
+       ______________________________________
+      /                                      \
+      | TLDR; Don't upload anything illegal. |
+      \                                      /
+       --------------------------------------
+              \   ^__^
+               \  (oo)\_______
+                  (__)\       )\/\
+                      ||----w |
+                      ||     ||
+    </pre>
+  </div>
   
   <!-- Included JS Files (Compressed) -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="javascripts/jquery.lettering.js"></script>
-  <script src="javascripts/less-1.3.3.min.js"></script>
   <script src="javascripts/jquery.ui.widget.js"></script>
   <script src="javascripts/jquery.fileupload.js"></script>
 

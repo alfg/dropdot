@@ -20,3 +20,8 @@ $('#drop').on("dragleave", function(e){
     e.preventDefault();
     return false;
 });
+$('.footer-link').click( function(){
+    $('.footer-text').hide();
+    
+    $($(this).attr('href')).fadeIn('fast');
+});
