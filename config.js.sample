@@ -1,5 +1,6 @@
 // All configuration options
 
+module.exports.port = 3000; // App's port
 module.exports.aws_key = ""; // AWS Key
 module.exports.aws_secret = ""; // AWS Secret
 module.exports.aws_bucket = ""; // AWS bucket
