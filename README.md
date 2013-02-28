@@ -4,6 +4,8 @@ Dropdot is a simple file uploader built on NodeJS, Express and Amazon S3 as the 
 
 Configuring Dropdot is simple, just follow the steps below:
 
+**Demo**: http://dropdot.alfg.co/
+
 ##Installation##
 ```bash
 $ git clone https://github.com/alfg/dropdot.git
