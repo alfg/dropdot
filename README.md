@@ -68,7 +68,7 @@ Dropdot uses the following technologies, check them out!
 * [Foundation][7] CSS Framework
 * [Amazon S3][8] Cloud Object/File Storage Platform
 
-Guides that spared me a few gray hairs:
+Guides that saved me a few gray hairs dealing with CORS:
 
 * http://pjambet.github.com/blog/direct-upload-to-s3/
 * http://aws.amazon.com/articles/1434
