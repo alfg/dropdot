@@ -14,14 +14,13 @@ $ git clone https://github.com/alfg/dropdot.git
 Open `config.js` and configure the following:
 
 ```javascript
- module.exports.port = 3000; // App port
- module.exports.aws_key = "YourAWSKey"; // AWS Key
- module.exports.aws_secret = "YourSuperSecretAWSKey"; // AWS Secret
- module.exports.aws_bucket = "NameOfS3Bucket"; // S3 bucket
- module.exports.expire_date = "2014-01-01T00:00:00Z"; // This will be removed soon
- module.exports.host = "http://localhost:3000/"; // This will be removed soon
- module.exports.redirect_host = "http://localhost:3000/"; // Redirect page after successful upload
- module.exports.bucket_dir = "uploads/"; // Subdirectory in S3 bucket where uploads will go
+module.exports.port = 3000; // App port
+module.exports.aws_key = "YourAWSKey"; // AWS Key
+module.exports.aws_secret = "YourSuperSecretAWSKey"; // AWS Secret
+module.exports.aws_bucket = "NameOfS3Bucket"; // S3 bucket
+module.exports.redirect_host = "http://localhost:3000/"; // Redirect page after successful upload
+module.exports.bucket_dir = "uploads/"; // Subdirectory in S3 bucket where uploads will go
+module.exports.max_filesize = 20971520; // Max filesize in bytes (default 20MB)
 ```
 Run the app:
 
