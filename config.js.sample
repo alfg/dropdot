@@ -1,9 +1,9 @@
 // All configuration options
 
+module.exports.port = 3000; // App's port
 module.exports.aws_key = ""; // AWS Key
 module.exports.aws_secret = ""; // AWS Secret
-module.exports.aws_bucket = ""; // AWS bucket
-module.exports.expire_date = "2014-01-01T00:00:00Z"; // Expiration of policy in UTC
-module.exports.host = "http://localhost:3000/"; // Host
+module.exports.aws_bucket = ""; // AWS Bucket
 module.exports.redirect_host = "http://localhost:3000/"; // Host to redirect after uploading
 module.exports.bucket_dir = "uploads/";
+module.exports.max_filesize = 20971520; // Max filesize in bytes (default 20MB)
