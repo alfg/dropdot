@@ -7,11 +7,15 @@ Configuring Dropdot is simple, just follow the steps below:
 **Demo**: http://dropdot.alfg.co/
 
 ##Installation##
+Clone and install dependencies
+
 ```bash
 $ git clone https://github.com/alfg/dropdot.git
+$ cd dropdot
+$ npm install
 ```
 
-Open `config.js` and configure the following:
+Open `config.js` and configure
 
 ```javascript
 module.exports.port = 3000; // App port
@@ -22,11 +26,13 @@ module.exports.redirect_host = "http://localhost:3000/"; // Redirect page after 
 module.exports.bucket_dir = "uploads/"; // Subdirectory in S3 bucket where uploads will go
 module.exports.max_filesize = 20971520; // Max filesize in bytes (default 20MB)
 ```
-Run the app:
+Run the app
 
 ```bash
 $ node app.js
 ```
+
+Load `http://localhost:3000` into the browser
 
 The app is set, now you need to create and configure your S3 Bucket.
 
