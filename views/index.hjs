@@ -14,12 +14,11 @@
   <link rel="shortcut icon" href="images/circle.png">
 
   <script>
-    var bucket_dir = "uploads/";
+    var bucket_dir = "{{ bucket_dir }}";
     var aws_key = "{{ aws_key }}";
     var acl = "public-read";
     var redirect = "{{ redirect_host }}";
   </script>
-
 </head>
 <body>
 
@@ -30,7 +29,7 @@
     </div>
 
     <h4>Drop a file here and share</h4>
-    <p><em>Any file. 5MB Maximum. No fishy business.</em> ;) <br />
+    <p><em>Any file. 20MB Maximum. No fishy business.</em> ;) <br />
     <em>All files expire in 24 hours from the uploaded time.</em></p>
 
     <form action="http://{{ aws_bucket }}.s3.amazonaws.com" method="post" enctype="multipart/form-data" class="direct-upload">
@@ -42,7 +41,7 @@
       <input type="hidden" name="success_action_status" value="201">
       <input type="hidden" name="Content-Type">
 
-      <input name="file" type="file">
+      <input class="file-input" name="file" type="file">
     </form>
     <div class="progress round eight"><span class="meter"></span></div>
     <input class="share-url" type="text" />
@@ -85,13 +84,10 @@
     </pre>
   </div>
   
-  <!-- Included JS Files (Compressed) -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="javascripts/jquery.lettering.js"></script>
   <script src="javascripts/jquery.ui.widget.js"></script>
   <script src="javascripts/jquery.fileupload.js"></script>
-
-  <script src="javascripts/drop.js"></script>
   <script src="javascripts/app.js"></script>
 
   <script>

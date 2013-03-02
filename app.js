@@ -29,8 +29,7 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
-app.get('/share', routes.share);
-app.get('/signed_urls', routes.signed_urls);
+app.get('/signed', routes.signed);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

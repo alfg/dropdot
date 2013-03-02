@@ -178,6 +178,10 @@ body {
   width: 80% !important;
   margin: 0 auto;
 }
+#drop .file-input {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 5px 5px 5px 10px;
+}
 #circle {
   border-radius: 50%;
   width: 450px;
