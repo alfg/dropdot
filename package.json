@@ -11,6 +11,7 @@
     "less-middleware": "*",
     "node-uuid": "*",
     "node-crypto": "*",
-    "mime": "*"
+    "mime": "*",
+    "moment": "*"
   }
 }
