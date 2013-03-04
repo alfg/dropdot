@@ -5,6 +5,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width" />
+  <meta name="description" content="Simple file uploading and sharing.">
 
   <title>DropDot - Simple file uploading and sharing</title>
   
@@ -19,6 +20,7 @@
     var acl = "public-read";
     var redirect = "{{ redirect_host }}";
   </script>
+
 </head>
 <body>
 

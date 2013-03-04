@@ -1,7 +1,8 @@
 {
   "name": "dropdot",
+  "description": "Simple file uploading application",
   "version": "0.0.1",
-  "private": true,
+  "author": "Alf <alf.g.jr@gmail.com>",
   "scripts": {
     "start": "node app"
   },
@@ -13,5 +14,7 @@
     "node-crypto": "*",
     "mime": "*",
     "moment": "*"
-  }
+  },
+  "keywords": ["uploader", "app"],
+  "repository": "git://github.com/alfg/dropdot"
 }
