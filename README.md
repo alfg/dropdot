@@ -15,7 +15,7 @@ $ cd dropdot
 $ npm install
 ```
 
-Open `config.js` and configure
+Open `config.js.sample` and configure
 
 ```javascript
 module.exports.port = 3000; // App port
@@ -26,9 +26,10 @@ module.exports.redirect_host = "http://localhost:3000/"; // Redirect page after 
 module.exports.bucket_dir = "uploads/"; // Subdirectory in S3 bucket where uploads will go
 module.exports.max_filesize = 20971520; // Max filesize in bytes (default 20MB)
 ```
-Run the app
+Rename `config.js.sample` to `config.js` and run the app
 
 ```bash
+$ mv config.js.sample config.js
 $ node app.js
 ```
 

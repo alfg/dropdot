@@ -11,7 +11,7 @@
     "hjs": "*",
     "less-middleware": "*",
     "node-uuid": "*",
-    "node-crypto": "*",
+    "crypto": "*",
     "mime": "*",
     "moment": "*"
   },
