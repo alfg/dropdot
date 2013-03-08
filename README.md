@@ -37,7 +37,7 @@ Load `http://localhost:3000` into the browser
 
 The app is set, now you need to create and configure your S3 Bucket.
 
-##Configuring your S3 Bucket###
+## Configuring your S3 Bucket ##
 In order to allow S3 to accept CORS uploads from your app, it needs to be properly configured.
 
 Log into your S3 Console and create a bucket.
@@ -59,6 +59,20 @@ Enter the following:
 </CORSConfiguration>
 ```
 Of course, the * in AllowedOrigin is only for development. Be sure to use your domain when going public.
+
+## CNAME your S3 bucket (optional) ##
+
+Objects will be available by accessing the public URL directly. Example:
+`http://bucket-name.s3.amazonaws.com/uploads/439fbca8-b79b-40e9-8172-4d318737ee14_file.jpg`
+
+However, if you wish to customize the URL, you can use a CNAME. First, create/rename your bucket to match the
+subdomain (`uploads.domain.com`). Then create the CNAME (via your DNS settings) using the exact name of the 
+bucket/subdomain.
+
+To be clear, the bucket's name and CNAME should be identical. i.e. `uploads.domain.com`
+
+You can now access your files as:
+`http://uploads.domain.com/uploads/439fbca8-b79b-40e9-8172-4d318737ee14_file.jpg`
 
 ## That's it! ##
 All done! Now go upload stuff.
