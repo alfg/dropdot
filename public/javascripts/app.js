@@ -10,7 +10,7 @@ $(function() {
       type: 'POST',
       autoUpload: true,
       dataType: 'xml', // S3's XML response
-      add: function (event, data) {
+      add: function (event, uploader) {
         $.ajax({
           url: "/signed",
           type: 'GET',
@@ -20,13 +20,13 @@ $(function() {
           success: function(data) {
             // Now that we have our data, we update the form so it contains all
             // the needed data to sign the request
-            form.find('input[name=key]').val(data.key)
-            form.find('input[name=policy]').val(data.policy)
-            form.find('input[name=signature]').val(data.signature)
-            form.find('input[name=Content-Type]').val(data.contentType)
+            form.find('input[name=key]').val(data.key);
+            form.find('input[name=policy]').val(data.policy);
+            form.find('input[name=signature]').val(data.signature);
+            form.find('input[name=Content-Type]').val(data.contentType);
+            uploader.submit();
           }
         })
-        data.submit();
       },
       send: function(e, data) {
         $('.progress').fadeIn(); // Display widget progress bar
