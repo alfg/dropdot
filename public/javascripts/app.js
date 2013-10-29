@@ -10,7 +10,7 @@ $(function() {
       type: 'POST',
       autoUpload: true,
       dataType: 'xml', // S3's XML response
-      add: function (event, uploader) {
+      add: function (event, data) {
         $.ajax({
           url: "/signed",
           type: 'GET',
@@ -24,9 +24,9 @@ $(function() {
             form.find('input[name=policy]').val(data.policy);
             form.find('input[name=signature]').val(data.signature);
             form.find('input[name=Content-Type]').val(data.contentType);
-            uploader.submit();
           }
         })
+        data.submit();
       },
       send: function(e, data) {
         $('.progress').fadeIn(); // Display widget progress bar
