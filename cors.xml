@@ -1,0 +1,10 @@
+<CORSConfiguration>
+    <CORSRule>
+        <AllowedOrigin>*</AllowedOrigin>
+        <AllowedMethod>PUT</AllowedMethod>
+        <MaxAgeSeconds>3000</MaxAgeSeconds>
+        <AllowedHeader>Content-Type</AllowedHeader>
+        <AllowedHeader>x-amz-acl</AllowedHeader>
+        <AllowedHeader>origin</AllowedHeader>
+    </CORSRule>
+</CORSConfiguration>
