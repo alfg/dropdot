@@ -21,6 +21,20 @@
     var redirect = "{{ redirect_host }}";
   </script>
 
+  <!-- GA -->
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36907732-2']);
+    _gaq.push(['_setDomainName', 'alfg.co']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
 </head>
 <body>
 
@@ -54,6 +68,8 @@
           <li><a class="footer-link" href="#about">About</a></li>
           <li><a href="http://github.com/alfg/dropdot">Code</a></li>
           <li><a class="footer-link" href="#terms">Terms</a></li>
+	  <li><iframe src="http://ghbtns.com/github-btn.html?user=alfg&repo=dropdot&type=watch&count=true"
+  allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe></li>
       </ul>
   </footer>
 
