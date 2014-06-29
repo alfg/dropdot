@@ -95,7 +95,6 @@ Dropdot uses the following technologies, check them out!
 * [mime][4] Mime-type detection
 * [crypto][5] Used for SHA1, Base64 digestion
 * [uuid][6] Generating the unique IDs
-* [Foundation][7] CSS Framework
 * [Amazon S3][8] Cloud Object/File Storage Platform
 
 Guides that saved me a few gray hairs dealing with CORS:
