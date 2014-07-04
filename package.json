@@ -1,7 +1,7 @@
 {
   "name": "dropdot",
   "description": "Simple file uploading application",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "author": "Alf <alf.g.jr@gmail.com>",
   "scripts": {
     "start": "node app"

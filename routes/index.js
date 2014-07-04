@@ -24,13 +24,14 @@ exports.signed = function(req, res){
 
   var mime_type = mime.lookup(req.query.title); // Uses node-mime to detect mime-type based on file extension
   var expire = moment().utc().add('hour', 1).toJSON("YYYY-MM-DDTHH:mm:ss Z"); // Set policy expire date +30 minutes in UTC
+  var file_key = uuid.v4(); // Generate uuid for filename
 
   // Creates the JSON policy according to Amazon S3's CORS uploads specfication (http://aws.amazon.com/articles/1434)
   var policy = JSON.stringify({
                 "expiration": expire,
-                  "conditions": [ 
-                    {"bucket": config.aws_bucket}, 
-                    ["starts-with", "$key", config.bucket_dir],
+                  "conditions": [
+                    {"bucket": config.aws_bucket},
+                    ["eq", "$key", config.bucket_dir + file_key + "_" + req.query.title],
                     {"acl": "public-read"},
                     {"success_action_status": "201"},
                     ["starts-with", "$Content-Type", mime_type],
@@ -38,9 +39,8 @@ exports.signed = function(req, res){
                   ]
                 });
 
-  var base64policy = new Buffer(policy).toString('base64'); // Create base64 policy 
+  var base64policy = new Buffer(policy).toString('base64'); // Create base64 policy
   var signature = crypto.createHmac('sha1', config.aws_secret).update(base64policy).digest('base64'); // Create signature
-  var file_key = uuid.v4(); // Generate uuid for filename
 
   // Return JSON View
   res.json({ policy: base64policy,
