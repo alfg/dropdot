@@ -64,8 +64,7 @@ Enter the following:
 Of course, the * in AllowedOrigin is only for development. Be sure to use your domain when going public.
 
 ## DreamObjects S3
-Log into your DreamHost account and go to DreamObjects section.
-Then upload cors.xml in the root of that bucket which you are seleceted as upload destionation ( aws_bucket in config.js ).
+See: https://help.dreamhost.com/hc/en-us/articles/216201557-How-to-setup-Cross-Origin-Resource-Sharing-CORS-on-DreamObjects
 
 
 ## CNAME your S3 bucket (optional) ##
