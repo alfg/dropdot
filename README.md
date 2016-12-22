@@ -5,7 +5,7 @@ It supports AWS S3 and DreamHost Objects as storage provider.
 
 Configuring Dropdot is simple, just follow the steps below:
 
-**AWS S3 Demo**: http://dropdot.alfg.co/
+**AWS S3 Demo**: http://dropdot.alfg.me/
 
 ##Installation##
 Clone and install dependencies
