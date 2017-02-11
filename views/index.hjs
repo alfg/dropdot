@@ -48,7 +48,7 @@
     <p><em>Any file. 20MB Maximum. No fishy business.</em> ;) <br />
     <em>All files expire in 24 hours from the uploaded time.</em></p>
 
-    <form action="http://{{ aws_bucket }}.{{ host }}" method="post" enctype="multipart/form-data" class="direct-upload">
+    <form action="//{{ aws_bucket }}.{{ host }}" method="post" enctype="multipart/form-data" class="direct-upload">
       <input type="hidden" name="key">
       <input type="hidden" name="AWSAccessKeyId" value="{{ aws_key }}"> 
       <input type="hidden" name="acl" value="public-read"> 
