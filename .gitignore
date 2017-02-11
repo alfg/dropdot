@@ -9,7 +9,6 @@ lib-cov
 *.tmp
 *.swp
 *.swo
-config.js
 pids
 logs
 results
@@ -17,4 +16,7 @@ results
 npm-debug.log
 node_modules
 .idea
+
+# Compiled CSS.
+public/stylesheets/app.css
 

@@ -16,7 +16,8 @@ $ cd dropdot
 $ npm install
 ```
 
-Open `config.js.sample` and configure
+
+Open `config.js` and configure
 
 ```javascript
 module.exports.port = 3000; // App port
@@ -28,8 +29,19 @@ module.exports.host = "YOUR_S3_PROVIDER"; // S3 provider host
 module.exports.bucket_dir = "uploads/"; // Subdirectory in S3 bucket where uploads will go
 module.exports.max_filesize = 20971520; // Max filesize in bytes (default 20MB)
 ```
-Rename `config.js.sample` to `config.js` and run the app
 
+Or set your environment variables:
+```bash
+export PORT=3000
+export AWS_KEY=<YourAWSKey>
+export AWS_SECRET=<YourSuperSecretAWSKey>
+export AWS_BUCKET=<NameOfS3Bucket>
+export REDIRECT_HOST=http://localhost:3000/
+export HOST=<YOUR_S3_PROVIDER>
+export BUCKET_DIR=uploads
+```
+
+Run the app
 ```bash
 $ mv config.js.sample config.js
 $ node app.js
