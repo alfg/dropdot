@@ -44,7 +44,6 @@ export BUCKET_DIR=uploads
 
 Run the app
 ```bash
-$ mv config.js.sample config.js
 $ node app.js
 ```
 
