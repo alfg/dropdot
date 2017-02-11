@@ -1,20 +1,23 @@
 {
   "name": "dropdot",
   "description": "Simple file uploading application",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Alf <alf.g.jr@gmail.com>",
   "scripts": {
-    "start": "node app"
+    "start": "node app.js"
   },
   "dependencies": {
+    "crypto": "0.0.3",
     "express": "3.0.6",
-    "hjs": "*",
-    "less-middleware": "*",
-    "node-uuid": "*",
-    "crypto": "*",
-    "mime": "*",
-    "moment": "*"
+    "hjs": "0.0.6",
+    "less-middleware": "^2.2.0",
+    "mime": "^1.3.4",
+    "moment": "^2.17.1",
+    "node-uuid": "^1.4.7"
   },
-  "keywords": ["uploader", "app"],
+  "keywords": [
+    "uploader",
+    "app"
+  ],
   "repository": "git://github.com/alfg/dropdot"
 }
