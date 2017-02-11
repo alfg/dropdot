@@ -5,9 +5,9 @@ It supports AWS S3 and DreamHost Objects as storage provider.
 
 Configuring Dropdot is simple, just follow the steps below:
 
-**AWS S3 Demo**: http://dropdot.alfg.me/
+**AWS S3 Demo**:* http://dropdot.herokuapp.com/
 
-##Installation##
+## Installation
 Clone and install dependencies
 
 ```bash
@@ -15,7 +15,6 @@ $ git clone https://github.com/alfg/dropdot.git
 $ cd dropdot
 $ npm install
 ```
-
 
 Open `config.js` and configure
 
@@ -51,7 +50,7 @@ Load `http://localhost:3000` into the browser
 
 The app is set, now you need to create and configure your S3 Bucket.
 
-## Configuring your S3 Bucket ##
+## Configuring your S3 Bucket
 In order to allow S3 to accept CORS uploads from your app, it needs to be properly configured.
 
 ## AWS S3
@@ -79,7 +78,7 @@ Of course, the * in AllowedOrigin is only for development. Be sure to use your d
 See: https://help.dreamhost.com/hc/en-us/articles/216201557-How-to-setup-Cross-Origin-Resource-Sharing-CORS-on-DreamObjects
 
 
-## CNAME your S3 bucket (optional) ##
+## CNAME your S3 bucket (optional)
 
 Objects will be available by accessing the public URL directly. Example:
 `http://bucket-name.s3.amazonaws.com/uploads/439fbca8-b79b-40e9-8172-4d318737ee14_file.jpg`
@@ -93,13 +92,13 @@ To be clear, the bucket's name and CNAME should be identical. i.e. `uploads.doma
 You can now access your files as:
 `http://uploads.domain.com/uploads/439fbca8-b79b-40e9-8172-4d318737ee14_file.jpg`
 
-## That's it! ##
+## That's it!
 All done! Now go upload stuff.
 
-## License ##
+## License
 Dropdot is open-source under the [MIT License][1].
 
-## Credits ##
+## Credits
 Dropdot uses the following technologies, check them out!
 * [NodeJS][2] The core backend
 * [Express][3] Framework for Node. Serves the JSON policy

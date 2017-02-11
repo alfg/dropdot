@@ -68,7 +68,7 @@
           <li><a class="footer-link" href="#about">About</a></li>
           <li><a href="http://github.com/alfg/dropdot">Code</a></li>
           <li><a class="footer-link" href="#terms">Terms</a></li>
-	  <li><iframe src="http://ghbtns.com/github-btn.html?user=alfg&repo=dropdot&type=watch&count=true"
+	  <li><iframe src="//ghbtns.com/github-btn.html?user=alfg&repo=dropdot&type=watch&count=true"
   allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe></li>
       </ul>
   </footer>
