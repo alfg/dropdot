@@ -6,6 +6,9 @@
   "scripts": {
     "start": "node app.js"
   },
+  "engines": {
+    "node": "6.11.1"
+  },
   "dependencies": {
     "crypto": "0.0.3",
     "express": "3.0.6",
