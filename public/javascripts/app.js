@@ -37,7 +37,7 @@ $(function() {
         $('.meter').css('width', percent + '%') // Update progress bar percentage
       },
       fail: function(e, data) {
-        console.log('fail')
+        console.log('fail', e);
         $('#circle').removeClass('animate');
       },
       success: function(data) {
